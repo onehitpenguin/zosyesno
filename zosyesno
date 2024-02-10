@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Walentynkowa Strona</title>
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+	  color: white;
+      height: 100vh;
+      margin: 0;
+	  font-family: 'Pacifico', cursive;
+	  background: url('https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExY3g0aDZtYjkwbXhxbDhybTJyYzFiaWtoN3JsaTljcXBnOHBkeXh1NCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/iicDrNGWxHmDrIni6j/giphy.gif') center/cover fixed no-repeat;
+	  transition: background 0.5s ease-in-out;
+    }
+    #main-container {
+      text-align: center;
+    }
+	#valentine-gif {
+      width: 300px;
+      height: 300px;
+    }
+    #answer-buttons {
+      margin-top: 20px;
+    }
+    #no-button {
+      cursor: not-allowed;
+	  border: 2px solid #FF0000;
+      background-color: #CD5C5C;
+      color: #FF0000;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 5px;
+      margin: 5px;
+    }
+	#yes-button {
+      cursor: pointer;
+      border: 2px solid #ff66b2;
+      background-color: #ffccf2;
+      color: #ff0066;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 5px;
+      margin: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div id="main-container">
+    <h1>Czy będziesz moją WALENTYNKĄ?</h1>
+    <img id="valentine-gif" src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExem51cXBqOW54emQzbDA2aGV6eXM5ZmhpbjhjbWZhZGg5MnQ2cDJuMCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/VbnUQpnihPSIgIXuZv/giphy.gif" alt="Walentynkowy GIF">
+    <div id="answer-buttons">
+      <button onclick="selectAnswer('no')" id="no-button">Nie</button>
+      <button onclick="selectAnswer('yes')" id="yes-button">Tak</button>
+    </div>
+    <p id="response-text"></p>
+  </div>
+
+  <script>
+    function selectAnswer(answer) {
+      var valentineGif = document.getElementById('valentine-gif');
+      var responseText = document.getElementById('response-text');
+      var noButton = document.getElementById('no-button');
+	  var yesButton = document.getElementById('yes-button');
+
+      if (answer === 'yes') {
+        valentineGif.src = 'https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExM25wNnYwaGJzb3M2ZGh6YjZkZ2x3MmsycTZ1ZmtmZHJkMmJoOHhmaiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/5i7umUqAOYYEw/giphy.gif';
+        responseText.textContent = 'Dobry wybór bebuszko, do zobaczenia 14-tego!!!';
+        noButton.style.display = 'none';
+		body.style.background = 'url("https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbnExNGt3ZmhuYXA2ZzQzNTNzZno4bnZsNHVxanhieXQ0cmxzbG5oeSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/P4GxohAK1vaKI2yH8E/giphy.gif") center/cover fixed no-repeat';
+      } else {
+		valentineGif.src = 'https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZzJsM2FzZjgybTEzYmw2Z2FkZTRnbm5pamR1ZWFiYjl5aW1oYTg5OSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/nR4L10XlJcSeQ/giphy.gif';
+        responseText.textContent = 'Przycisk "nie" jest tylko w formie graficznej, nie da się go kliknąć';
+      }
+    }
+  </script>
+</body>
+</html>
